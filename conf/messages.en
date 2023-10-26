@@ -56,10 +56,10 @@ signedOut.guidance = We did not save your answers.
 unauthorised.title = You can’t access this service with this account
 unauthorised.heading = You can’t access this service with this account
 
-whatIsYourName.title = whatIsYourName
-whatIsYourName.heading = whatIsYourName
-whatIsYourName.firstName = firstName
-whatIsYourName.surname = surname
+whatIsYourName.title = What is your name?
+whatIsYourName.heading = Please enter your name
+whatIsYourName.firstName = First Name
+whatIsYourName.surname = Surname
 whatIsYourName.checkYourAnswersLabel = whatIsYourName
 whatIsYourName.error.firstName.required = Enter firstName
 whatIsYourName.error.surname.required = Enter surname
@@ -67,3 +67,6 @@ whatIsYourName.error.firstName.length = firstName must be 100 characters or less
 whatIsYourName.error.surname.length = surname must be 100 characters or less
 whatIsYourName.firstName.change.hidden = firstName
 whatIsYourName.surname.change.hidden = surname
+
+statSickPay.title = statSickPay
+statSickPay.heading = statSickPay

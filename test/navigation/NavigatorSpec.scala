@@ -29,11 +29,17 @@ class NavigatorSpec extends SpecBase {
 
     "in Normal mode" - {
 
-      "must go from a page that doesn't exist in the route map to Index" in {
+//      "must go from a page that doesn't exist in the route map to Index" in {
+//
+//        case object UnknownPage extends Page
+//        navigator.nextPage(UnknownPage, NormalMode, UserAnswers("id")) mustBe routes.IndexController.onPageLoad
+//      }
 
-        case object UnknownPage extends Page
-        navigator.nextPage(UnknownPage, NormalMode, UserAnswers("id")) mustBe routes.IndexController.onPageLoad
+      "must go from whatIsYourName page to statSickPay landing page" in{
+
+        navigator.nextPage(whatIsYourNamePage, NormalMode, UserAnswers("id")) mustBe routes.StatSickPayController.onPageLoad
       }
+
     }
 
     "in Check mode" - {

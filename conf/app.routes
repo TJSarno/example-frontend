@@ -24,3 +24,5 @@ GET        /whatIsYourName                        controllers.whatIsYourNameCont
 POST       /whatIsYourName                        controllers.whatIsYourNameController.onSubmit(mode: Mode = NormalMode)
 GET        /changewhatIsYourName                  controllers.whatIsYourNameController.onPageLoad(mode: Mode = CheckMode)
 POST       /changewhatIsYourName                  controllers.whatIsYourNameController.onSubmit(mode: Mode = CheckMode)
+
+GET        /statSickPay                       controllers.StatSickPayController.onPageLoad()
