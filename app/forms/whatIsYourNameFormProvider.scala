@@ -14,20 +14,23 @@
  * limitations under the License.
  */
 
-package controllers.auth
+package forms
 
 import javax.inject.Inject
-import play.api.i18n.I18nSupport
-import play.api.mvc.{Action, AnyContent, MessagesControllerComponents}
-import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendBaseController
-import views.html.auth.SignedOutView
 
-class SignedOutController @Inject()(
-                                     val controllerComponents: MessagesControllerComponents,
-                                     view: SignedOutView
-                                   ) extends FrontendBaseController with I18nSupport {
+import forms.mappings.Mappings
+import play.api.data.Form
+import play.api.data.Forms._
+import models.whatIsYourName
 
-  def onPageLoad: Action[AnyContent] = Action { implicit request =>
-    Ok(view())
-  }
-}
+class whatIsYourNameFormProvider @Inject() extends Mappings {
+
+   def apply(): Form[whatIsYourName] = Form(
+     mapping(
+      "firstName" -> text("whatIsYourName.error.firstName.required")
+        .verifying(maxLength(100, "whatIsYourName.error.firstName.length")),
+      "surname" -> text("whatIsYourName.error.surname.required")
+        .verifying(maxLength(100, "whatIsYourName.error.surname.length"))
+    )(whatIsYourName.apply)(whatIsYourName.unapply)
+   )
+ }

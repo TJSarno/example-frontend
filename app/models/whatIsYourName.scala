@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 HM Revenue & Customs
+ * Copyright 2023 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,21 +14,12 @@
  * limitations under the License.
  */
 
-package generators
+package models
 
-import models._
-import org.scalacheck.Arbitrary
-import org.scalacheck.Arbitrary.arbitrary
-import pages._
-import play.api.libs.json.{JsValue, Json}
+import play.api.libs.json._
 
-trait UserAnswersEntryGenerators extends PageGenerators with ModelGenerators {
+case class whatIsYourName (firstName: String, surname: String)
 
-  implicit lazy val arbitrarywhatIsYourNameUserAnswersEntry: Arbitrary[(whatIsYourNamePage.type, JsValue)] =
-    Arbitrary {
-      for {
-        page  <- arbitrary[whatIsYourNamePage.type]
-        value <- arbitrary[whatIsYourName].map(Json.toJson(_))
-      } yield (page, value)
-    }
+object whatIsYourName {
+  implicit val format = Json.format[whatIsYourName]
 }

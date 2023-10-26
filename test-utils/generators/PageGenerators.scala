@@ -20,4 +20,7 @@ import org.scalacheck.Arbitrary
 import pages._
 
 trait PageGenerators {
+
+  implicit lazy val arbitrarywhatIsYourNamePage: Arbitrary[whatIsYourNamePage.type] =
+    Arbitrary(whatIsYourNamePage)
 }
